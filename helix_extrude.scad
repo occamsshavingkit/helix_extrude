@@ -12,7 +12,20 @@
  * use iso_bolt().
  * give it a diameter, a length, a pitch and whether or not it is an internal thread.
  * it will return a ISO profile bolt.
- * if you want a different bolt, make a profile and use helix_extrude. 
+ * if you want a different bolt, make a profile and use helix_extrude.
+ * 
+ * Functions:
+ * helix_extrude(shape, pitch, rotations, convexity) - extrudes a shape
+ * transform_shape(matrix, shape) - returns a shape transformed by the matrix
+ * he_rotate(rv, shape) - returns a rotated shape. Rotations are applied in the order X, Y, Z.
+ * he_translate(tv, shape) - returns a translated shape.
+ * he_scale(sv, shape) - returns a scaled shape.
+ * he_circle(diameter) - a circle centered on the origin.
+ * he_square(v, center) - a square with the size in the vector, centered on the origin or not.
+ * matrix_power(matrix, power) - returns a matrix taken to a power.
+ * iso_bolt(diameter, pitch, length, internal) - returns a bolt with threads of nominal diameter, with a given pitch, that is a given length.
+ *      If internal is true it makes the bolt a bit bigger and it is for subtracting from your solid (using difference()).
+ * iso_thread_profile - a helper function for iso_bolt. Not meant for external use.
  */
 
 /* 
