@@ -166,7 +166,7 @@ function he_rotate(rv, shape) =
 Makes a circle of diameter d centered on the origin.
  */
 function he_circle(d) =
- let(steps = $fn?$fn:max(5,min(360/$fa, 2*PI*d/$fs)))
+ let(steps = $fn?$fn:max(5,min(360/$fa, PI*d/$fs)))
  [for(a=[0:steps]) [d/2 * cos(a*360/steps), d/2 * sin(a*360/steps),0]];
 /*
 Makes a square. Can be centered on the origin or have a vertex on the origin using center. You must give it a vector.
